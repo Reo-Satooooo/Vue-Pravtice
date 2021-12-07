@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ appName }}</h1>
+    <p>{{ message }}</p>
+    <p>計算式:{{ kg }} / {{ cm }}</p>
+    <p>BMI値:{{ bmi }}</p>
+    <hr/>
+    <!-- v-modelはデータの紐付 -->
+    <p><input v-model="cm">cm</p>
+    <p><input v-model="kg">kg</p>
+    <!-- v-onはイベントと実行処理の紐付け -->
+    <p><button v-on:click="calc">計算</button></p>
+    <hr/>
+    <p v-if="bmi <= 0">-</p>
+    <p v-else-if="bmi < 18.5">やせ</p>
+    <p v-else-if="bmi < 25">標準</p>
+    <p v-else>肥満</p>
+  </div>
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="./main.js" defer></script>
+</body>
+</html>
